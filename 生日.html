@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生日</title>
+  </head>
+  <body>
+    <h1>請輸入日期</h1>
+    <input type="date" class="birthday" />
+    <h2>
+      年紀為:
+      <p class="age"></p>
+    </h2>
+    <script>
+      const birthday = document.querySelector(".birthday");
+      const age = document.querySelector(".age");
+      function getAge(e) {
+        if (birthday.value) {
+          const date = new Date().getFullYear();
+          const arr = birthday.value.split("-");
+          console.log(date);
+          console.log(birthday.value.split("-"));
+          var newage = date - arr[0];
+          console.log(newage);
+        }
+        age.innerHTML += newage + "歲";
+      }
+      birthday.addEventListener("change", getAge);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>溫度</title>
+  </head>
+  <body>
+    <h1>攝氏轉華氏</h1>
+    <label>攝氏:</label>
+    <input type="number" class="C" />
+
+    <h2>華氏:</h2>
+    <p class="F">0</p>
+    <script>
+      const C = document.querySelector(".C");
+      const F = document.querySelector(".F");
+      function change(e) {
+        if (C.value) {
+          F.innerHTML = (+C.value * 9) / 5 + 32;
+          return;
+        }
+      }
+      C.addEventListener("change", change);
+    </script>
+  </body>
+</html>
